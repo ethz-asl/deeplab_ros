@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>deeplab_ros</name>
+  <version>1.0.0</version>
+  <description>DeepLab v3 for ROS</description>
+
+  <author email="margarita.grinvald@mavt.ethz.ch">Margarita Grinvald</author>
+  <maintainer email="margarita.grinvald@mavt.ethz.ch">Margarita Grinvald</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+</package>
