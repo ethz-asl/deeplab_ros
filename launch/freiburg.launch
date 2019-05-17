@@ -1,0 +1,12 @@
+<launch>
+
+  <arg name="deeplab_ros_node_params" default="$(find deeplab_ros)/cfg/freiburg_rgbd.yaml"/>
+  <node name="deeplab_ros_node" pkg="deeplab_ros" type="deeplab_ros_node.py" output="screen">
+    <rosparam file="$(arg deeplab_ros_node_params)" command="load" />
+  </node>
+
+  <node name="bag" pkg="rosbag" type="play"
+      args="-l $(find deeplab_ros)/bags/rgbd_dataset_freiburg3_long_office_household.bag" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find deeplab_ros)/rviz/deeplab_ros.rviz" />
+</launch>

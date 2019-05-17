@@ -1,0 +1,3 @@
+rgb_input: "/camera/rgb/image_color"
+model: "mobilenetv2_coco_voctrainaug"
+visualize: true
