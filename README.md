@@ -1,6 +1,6 @@
 # ROS Wrapper for DeepLab
 
-<img src="https://github.com/ethz-asl/deeplab_ros/doc/deeplab_ros.gif" width="400">
+<img src="https://raw.githubusercontent.com/ethz-asl/deeplab_ros/master/doc/deeplab_ros.gif" width="400">
 
 This is a package for using DeepLab models with ROS. DeepLab is a state-of-the-art deep learning architecture for semantic image segmentation, where the goal is to assign semantic labels (e.g., person, dog, cat and so on) to every pixel in the input image. For more information about DeepLab, please visit [this link](https://github.com/tensorflow/models/tree/master/research/deeplab).
 
