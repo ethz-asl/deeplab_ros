@@ -95,7 +95,7 @@ class DeepLabNode(object):
         rgb_image = PIL.Image.fromarray(rgb_image)
 
         resized_im, seg_map = self._model.run(rgb_image)
-        seg_map = cv2.resize(seg_map.astype(np.float32), rgb_image.size).astype(np.uint16)
+        seg_map = cv2.resize(seg_map.astype(np.float32), rgb_image.size, interpolation = cv2.INTER_NEAREST).astype(np.uint16)
 
         return seg_map
 
