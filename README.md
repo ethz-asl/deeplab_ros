@@ -43,7 +43,7 @@ roslaunch deeplab_ros freiburg.launch
 ```
 
 
-## Usage
+## ROS node
 
 #### Parameters:
 
