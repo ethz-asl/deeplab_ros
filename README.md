@@ -21,3 +21,58 @@ If you use the code for your research, please cite this work as:
   howpublished = {\url{https://github.com/ethz-asl/deeplab_ros}},
 }
 ```
+
+## Getting started
+Clone this repository to the `src` folder of your catkin workspace, build your workspace and source it.
+
+    ```bash
+    cd <catkin_ws>/src
+    git clone git@github.com:ethz-asl/deeplab_ros.git
+    catkin build
+    source <catkin_ws>/devel/setup.bash
+    ```
+
+
+## Usage
+
+#### Parameters:
+
+* **`~rgb_input`** [_string_]
+
+    Topic name of the input RGB stream.
+
+    Default: `"/camera/rgb/image_color"`
+
+* **`~model`** [_string_]
+
+    Name of the backbone network: {"mobilenetv2_coco_voctrainaug", "mobilenetv2_coco_voctrainval", "xception_coco_voctrainaug", "xception_coco_voctrainval"}.
+    If the specified model file doesn't exist, the node automatically downloads the file.
+
+    Default: `"mobilenetv2_coco_voctrainaug"`
+    
+* **`~visualize`** [_bool_]
+
+    If true, the segmentation result overlaid on top of the input RGB image is published to the `~segmentation_viz` topic.
+
+    Default: `true`
+    
+        
+#### Topics subscribed:
+
+* topic name specified by parameter **`~rgb_input`** (default: **`/camera/rgb/image_color`**) [_sensor_mgs/Image_]
+
+    Input RGB image to be processed.
+
+    
+#### Topics published:
+
+* **`~segmentation`** [_sensor_mgs/Image_]
+
+    Segmentation result.
+
+
+* **`~segmentation_viz`** [_sensor_mgs/Image_]
+
+    Visualization-friendly segmentation result color coded with the PASCAL VOC 2012 color map overlaid on top of the input RGB image.
+
+
