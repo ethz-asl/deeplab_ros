@@ -25,12 +25,22 @@ If you use the code for your research, please cite this work as:
 ## Getting started
 Clone this repository to the `src` folder of your catkin workspace, build your workspace and source it.
 
-    ```bash
-    cd <catkin_ws>/src
-    git clone git@github.com:ethz-asl/deeplab_ros.git
-    catkin build
-    source <catkin_ws>/devel/setup.bash
-    ```
+```bash
+cd <catkin_ws>/src
+git clone git@github.com:ethz-asl/deeplab_ros.git
+catkin build
+source <catkin_ws>/devel/setup.bash
+```
+
+## Example usage
+An example launch file is included processing a sequence from the [Freiburg RGB-D SLAM Dataset](https://vision.in.tum.de/data/datasets/rgbd-dataset/download).
+
+```bash
+cd <catkin_ws>/src/deeplab_ros
+chmod +x scripts/download_freiburg_rgbd_example_bag.sh 
+scripts/download_freiburg_rgbd_example_bag.sh
+roslaunch deeplab_ros freiburg.launch
+```
 
 
 ## Usage
@@ -45,7 +55,7 @@ Clone this repository to the `src` folder of your catkin workspace, build your w
 
 * **`~model`** [_string_]
 
-    Name of the backbone network: {"mobilenetv2_coco_voctrainaug", "mobilenetv2_coco_voctrainval", "xception_coco_voctrainaug", "xception_coco_voctrainval"}.
+    Name of the backbone network used for inference. List of available models: {"mobilenetv2_coco_voctrainaug", "mobilenetv2_coco_voctrainval", "xception_coco_voctrainaug", "xception_coco_voctrainval"}.
     If the specified model file doesn't exist, the node automatically downloads the file.
 
     Default: `"mobilenetv2_coco_voctrainaug"`
